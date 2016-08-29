@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
+<script>
+    <!-- 解决尺寸变化时浏览器执行速度过于灵敏,消耗资源-->
+    var box = document.getElementById("box");
+    var num = 0;
+    //    window.onresize = function(){
+    //        num++;
+    //        box.innerHTML = window.innerWidth|| document.documentElement.clientWidth;
+    //        console.log(num);
+    //    }
+
+    window.onresize = throttle(function () {
+        num++;
+        box.innerHTML = (window.innerWidth || document.documentElement.clientWidth)+"";
+        console.log(num);
+    }, 300);
+
+    //    闭包函数
+    function throttle(fn, delay) {
+        var timer = null;
+        return function () {
+            clearInterval(timer);
+            timer = setInterval(fn, delay);
+        }
+    }
+</script>

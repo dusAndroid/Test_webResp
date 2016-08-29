@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    <!-- 闭包 指的是一个函数可以访问另一个函数内的变量-->
+    function outFun(){
+        var num = 0;
+        return function(){
+         num++;
+            alert(num);
+        };
+    }
+    var demo = outFun();//定义函数
+    console.log(demo);
+    demo();demo();
+
+    var demo2 = outFun();
+    demo2();
+    demo2();
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function Person(name,age){
+        this.name = name;
+        this.age = age;
+    }
+
+    Person.prototype.showName = function(){
+        alert("我的名字是"+this.name);
+    }
+    Person.prototype.showAge = function(){
+        alert("我的年龄是"+this.age);
+    }
+
+    var demo = new Person("afdsf",25);
+    demo.showName();
+    demo.showAge();
+
+</script>
